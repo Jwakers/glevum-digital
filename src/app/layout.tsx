@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Serif_Display, Geist_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bodyFont = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -12,10 +12,60 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const displayFont = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "Glevum Digital | Gloucester Small Business Digital Partner",
+  metadataBase: new URL("https://glevum.digital"),
+  title: {
+    default: "Glevum Digital | Get Seen in Gloucester",
+    template: "%s | Glevum Digital",
+  },
   description:
-    "Websites, practical digital tools, and ongoing support for small businesses in Gloucester.",
+    "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
+  alternates: {
+    canonical: "/",
+  },
+  applicationName: "Glevum Digital",
+  category: "business",
+  openGraph: {
+    type: "website",
+    url: "https://glevum.digital",
+    siteName: "Glevum Digital",
+    title: "Glevum Digital | Get Seen in Gloucester",
+    description:
+      "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
+    locale: "en_GB",
+    // images: [
+    //   {
+    //     url: "/og-image.svg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Glevum Digital - local digital support for Gloucester small businesses",
+    //   },
+    // ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Glevum Digital | Get Seen in Gloucester",
+    description:
+      "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
+    // images: ["/og-image.svg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${bodyFont.variable} ${geistMono.variable} ${displayFont.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">{children}</body>
     </html>
