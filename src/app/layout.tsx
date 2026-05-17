@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gloucester Local Web Services",
-  description: "Modern websites and digital support for Gloucester businesses.",
+  title: "Glevum Digital | Gloucester Small Business Digital Partner",
+  description:
+    "Websites, practical digital tools, and ongoing support for small businesses in Gloucester.",
 };
 
 export default function RootLayout({
