@@ -25,15 +25,15 @@ export default function Home() {
               BASED IN GLOUCESTER, UK
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tighter uppercase font-mono text-primary-fixed">
-              Modern Websites.<br />
-              <span className="text-foreground">Technical Precision.</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter uppercase font-mono text-primary-fixed">
+              Digital Partner.<br />
+              <span className="text-foreground">Local Focus.</span>
             </h1>
             
             <div className="p-4 border-l-2 border-primary bg-background/80 backdrop-blur-sm max-w-2xl my-2">
               <p className="text-lg md:text-xl text-foreground font-mono leading-relaxed">
                 <span className="text-primary font-bold">{">"} </span>
-                Helping local businesses improve websites, simplify content management, and build practical digital tools. No confusing jargon, just reliable local expertise.
+                A dedicated digital partnership exclusively for small Gloucester businesses. More than just websites—I build bespoke digital tools and provide reliable, jargon-free technical support to help your business operate smoother.
               </p>
             </div>
             
