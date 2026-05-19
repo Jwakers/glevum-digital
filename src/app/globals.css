@@ -12,7 +12,6 @@
   --color-outline: #5f6887;
   --color-outline-variant: #c1cadf;
   --font-sans: var(--font-manrope);
-  --font-display: var(--font-dm-serif-display);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -47,28 +46,3 @@ body {
   border-bottom: 1px dashed var(--color-outline);
 }
 
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.reveal-up {
-  opacity: 0;
-  animation: rise-in 700ms cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
-}
-
-.card-glow {
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-}
-
-.card-glow:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(11, 78, 219, 0.1);
-  border-color: rgba(11, 78, 219, 0.45);
-}

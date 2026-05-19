@@ -42,7 +42,7 @@ export function ContactForm() {
       setMessage(
         error instanceof Error
           ? error.message
-          : "I could not send your message right now. Please email hello@glevum.digital."
+          : "I could not send your message right now. Please email hello@glevum.digital.",
       );
     }
   }
@@ -53,7 +53,10 @@ export function ContactForm() {
       onSubmit={onSubmit}
     >
       <div className="space-y-2">
-        <label htmlFor="name" className="text-sm font-medium text-foreground/80">
+        <label
+          htmlFor="name"
+          className="text-sm font-medium text-foreground/80"
+        >
           Name
         </label>
         <input
@@ -66,7 +69,10 @@ export function ContactForm() {
         />
       </div>
       <div className="space-y-2">
-        <label htmlFor="email" className="text-sm font-medium text-foreground/80">
+        <label
+          htmlFor="email"
+          className="text-sm font-medium text-foreground/80"
+        >
           Email
         </label>
         <input
@@ -79,7 +85,10 @@ export function ContactForm() {
         />
       </div>
       <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-foreground/80">
+        <label
+          htmlFor="message"
+          className="text-sm font-medium text-foreground/80"
+        >
           What do you need help with?
         </label>
         <textarea
@@ -99,11 +108,15 @@ export function ContactForm() {
         {status === "sending" ? "Sending..." : "Request your review"}
       </button>
       {message ? (
-        <p className={`text-sm ${status === "error" ? "text-red-600" : "text-foreground/75"}`}>
+        <p
+          className={`text-sm ${status === "error" ? "text-red-600" : "text-foreground/75"}`}
+        >
           {message}
         </p>
       ) : (
-        <p className="text-xs text-foreground/60">No pressure. Just a clear first step.</p>
+        <p className="text-xs text-foreground/60">
+          No pressure. Just a clear first step.
+        </p>
       )}
     </form>
   );

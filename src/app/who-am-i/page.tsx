@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Camera, Handshake, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
+import { Handshake, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
+import profileImage from "../../../public/profile-image.png";
 
 export const metadata: Metadata = {
   title: "Who Am I?",
@@ -32,49 +33,47 @@ const sections = [
   {
     title: "My background",
     prompt:
-      "Placeholder: Explain your professional background, years of experience, and the types of digital work you've done before focusing on Gloucester small businesses.",
+      "I've worked in digital development for around 10 years, starting as a junior developer at a small company and progressing into agency environments. Over that time, I've delivered projects for major organisations across law, ecommerce, sport, and manufacturing, including businesses operating at multi-million and billion-pound scale.",
   },
   {
     title: "Why I started this",
     prompt:
-      "Placeholder: Share why you chose to work directly with small local businesses, what you enjoy about this work, and the impact you want to have in Gloucester.",
+      "I started Glevum Digital to bring that experience back home to Gloucester. I wanted to focus on helping local small businesses who are great at what they do but often do not have the time to untangle websites, systems, updates, and digital tools on top of running day-to-day operations.",
   },
   {
     title: "How I work with clients",
     prompt:
-      "Placeholder: Describe your communication style, how projects are run, how often you update clients, and how you keep things clear and jargon-free.",
+      "Honesty comes first. I will never recommend work I do not believe will genuinely help your business. I keep communication clear, practical, and jargon-free so you always understand what is happening, why it matters, and what your options are.",
   },
   {
     title: "What clients can expect",
     prompt:
-      "Placeholder: Outline expectations around response times, quality standards, support after launch, and how you handle ongoing improvements.",
+      "You can expect a friendly, communication-led digital partner who is easy to reach and straightforward to work with. Nothing is off limits to ask, and if something sits outside my best fit, I will tell you honestly and help you find the right person for that part.",
   },
   {
     title: "How ongoing support works",
     prompt:
-      "Placeholder: Explain your monthly care plan options, what is included, and how clients can request ad-hoc support.",
+      "Support is flexible around what your business actually needs. I can take on new project work, support existing systems, and handle ongoing website maintenance such as security updates, content changes, and technical improvements while keeping you in the loop throughout.",
   },
   {
     title: "Training and handover",
     prompt:
-      "Placeholder: Describe how you train owners/staff so they feel confident updating content and handling day-to-day website tasks.",
+      "I do not hand over work and disappear. I make sure you and your team understand what has been built, how to use it, and why key decisions were made. The aim is to remove friction, build confidence, and make your digital tools feel manageable day to day.",
   },
 ];
 
 const trustPoints = [
-  "Placeholder: Local-first commitment and why Gloucester focus matters to your service quality.",
-  "Placeholder: Direct partnership model with no outsourcing and no account managers.",
-  "Placeholder: Plain-English communication approach for non-technical business owners.",
-  "Placeholder: Long-term support philosophy with monthly care options.",
-  "Placeholder: Honest scope boundaries and referral promise when something is outside your best fit.",
-  "Placeholder: Transparent pricing approach with no unnecessary upsell.",
+  "I work exclusively with small businesses in Gloucester, so every recommendation is shaped around local context and practical needs.",
+  "You work directly with me from day one, with no account managers and no handoffs to outsourced teams.",
+  "I explain digital work in plain English so you can make informed decisions without needing technical expertise.",
+  "I support businesses long term, whether that means regular maintenance, ad-hoc help, or project-based delivery.",
+  "If I am not the right person for part of a project, I will say so and help you find someone who is.",
+  "Pricing and scope stay transparent, focused on value, and free from unnecessary upsells.",
 ];
 
 export default function WhoAmIPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader currentPage="who" />
-
       <main>
         <section className="px-6 py-20 border-b border-outline-variant blueprint-grid-bg">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -84,7 +83,7 @@ export default function WhoAmIPage() {
                 The person behind your digital partnership.
               </h1>
               <p className="text-lg text-foreground/80 leading-relaxed mb-4">
-                Placeholder: Add a short first-person introduction that explains who you are, where you&apos;re based, and why local business partnerships matter to you.
+                I&apos;m a Gloucester-based developer with around 10 years in the digital industry, and I built Glevum Digital to help local small businesses get practical, honest support with their websites and systems. My focus is simple: remove digital stress, cut unnecessary busy work, and give business owners more time to focus on what they do best.
               </p>
               <div className="inline-flex items-center border border-primary text-primary px-3 py-1 text-xs font-semibold font-mono uppercase tracking-widest bg-surface">
                 <MapPin className="w-3 h-3 mr-2" />
@@ -92,23 +91,14 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            <aside className="lg:col-span-5 space-y-4">
+            <aside className="lg:col-span-5">
               <div className="bg-surface border border-outline-variant p-6">
-                <div className="aspect-4/5 border border-dashed border-outline bg-background flex items-center justify-center text-center p-4">
-                  <div>
-                    <Camera className="w-8 h-8 text-outline mx-auto mb-3" />
-                    <p className="text-sm text-foreground/70">Portrait placeholder</p>
-                    <p className="text-xs text-outline mt-1">Headshot or natural working photo</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-surface border border-outline-variant p-6">
-                <div className="aspect-4/5 border border-dashed border-outline bg-background flex items-center justify-center text-center p-4">
-                  <div>
-                    <Camera className="w-8 h-8 text-outline mx-auto mb-3" />
-                    <p className="text-sm text-foreground/70">Second portrait placeholder</p>
-                    <p className="text-xs text-outline mt-1">Optional candid or local context image</p>
-                  </div>
+                <div className="border border-outline-variant bg-background">
+                  <Image
+                    src={profileImage}
+                    alt="Jack Wakeham, founder of Glevum Digital"
+                    className="block w-full h-auto"
+                  />
                 </div>
               </div>
             </aside>
@@ -117,8 +107,8 @@ export default function WhoAmIPage() {
 
         <section className="px-6 py-20 border-b border-outline-variant bg-surface">
           <div className="max-w-5xl mx-auto">
-            <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">Suggested structure</p>
-            <h2 className="text-3xl md:text-4xl font-display mb-8">What to include on this page</h2>
+            <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">How I work</p>
+            <h2 className="text-3xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight mb-8">What working together looks like</h2>
             <div className="grid grid-cols-1 gap-px bg-outline-variant border border-outline-variant">
               {sections.map((item) => (
                 <article key={item.title} className="bg-background p-7">
@@ -149,13 +139,13 @@ export default function WhoAmIPage() {
             <div className="bg-surface border border-outline-variant p-7">
               <div className="flex items-center gap-2 mb-4">
                 <Handshake className="w-5 h-5 text-primary" />
-                <h3 className="text-xl font-semibold">Personal note template</h3>
+                <h3 className="text-xl font-semibold">A personal note</h3>
               </div>
               <p className="text-sm text-foreground/80 leading-relaxed mb-4">
-                Placeholder: Write a short, honest note about how you like to work with people. This is a good place to reinforce your calm, practical, and collaborative approach.
+                I care about making digital feel less overwhelming. You should always feel comfortable asking questions, challenging ideas, and understanding exactly where your time and budget are going. The goal is to build the right systems for your business, not the most complicated ones.
               </p>
               <div className="border border-dashed border-outline bg-background p-4 text-sm text-foreground/70">
-                Placeholder: Signature block (your name, role, optional location line, optional direct contact preference).
+                Jack Wakeham · Founder & Developer · Gloucester
               </div>
             </div>
           </div>
@@ -165,10 +155,10 @@ export default function WhoAmIPage() {
           <div className="max-w-5xl mx-auto bg-background border border-outline-variant p-8 md:p-10">
             <div className="flex items-start gap-3 mb-4">
               <MessageSquare className="w-5 h-5 text-primary mt-0.5" />
-              <h2 className="text-2xl md:text-3xl font-display">Ready to chat?</h2>
+              <h2 className="text-2xl md:text-3xl font-sans font-extrabold tracking-tight leading-tight">Ready to chat?</h2>
             </div>
             <p className="text-foreground/80 mb-6">
-              Placeholder: Add your invitation text here for people who read this page and want to start a conversation.
+              If you&apos;d like honest advice, practical support, or a reliable long-term digital partner for your Gloucester business, let&apos;s have a chat and see what would help most.
             </p>
             <Link
               href="/#contact"

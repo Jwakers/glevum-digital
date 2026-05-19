@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Geist_Mono, Manrope } from "next/font/google";
+import { Geist_Mono, Manrope } from "next/font/google";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const bodyFont = Manrope({
@@ -10,12 +11,6 @@ const bodyFont = Manrope({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const displayFont = DM_Serif_Display({
-  variable: "--font-dm-serif-display",
-  subsets: ["latin"],
-  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -76,9 +71,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bodyFont.variable} ${geistMono.variable} ${displayFont.variable} antialiased`}
+      className={`${bodyFont.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <SiteHeader />
+        {children}
+        <footer className="border-t border-outline-variant py-8 text-center text-xs font-mono text-outline uppercase tracking-widest bg-background">
+          &copy; {new Date().getFullYear()} Glevum Digital · Bold digital
+          support for Gloucester small businesses.
+        </footer>
+      </body>
     </html>
   );
 }

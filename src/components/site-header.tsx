@@ -1,17 +1,28 @@
+ "use client";
+
 import { ArrowRight, Code2 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type SiteHeaderProps = {
   currentPage?: "home" | "who" | "services";
 };
 
 export function SiteHeader({ currentPage = "home" }: SiteHeaderProps) {
+  const pathname = usePathname();
+  const resolvedCurrentPage =
+    pathname === "/services"
+      ? "services"
+      : pathname === "/who-am-i"
+        ? "who"
+        : currentPage;
+
   const whoClass =
-    currentPage === "who"
+    resolvedCurrentPage === "who"
       ? "hidden sm:flex text-sm items-center font-semibold text-primary"
       : "hidden sm:flex text-sm items-center font-medium hover:text-primary transition-colors";
   const servicesClass =
-    currentPage === "services"
+    resolvedCurrentPage === "services"
       ? "hidden sm:flex text-sm items-center font-semibold text-primary"
       : "hidden sm:flex text-sm items-center font-medium hover:text-primary transition-colors";
 

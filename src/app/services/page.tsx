@@ -1,11 +1,19 @@
-import type { Metadata } from "next";
-import { ArrowRight, BadgePoundSterling, CheckCircle2, Handshake, Rocket, Settings2, ShoppingBag, Wrench } from "lucide-react";
-import Link from "next/link";
 import {
   partnershipBoundaries,
   serviceCategories,
 } from "@/content/service-framework";
-import { SiteHeader } from "@/components/site-header";
+import {
+  ArrowRight,
+  BadgePoundSterling,
+  CheckCircle2,
+  Handshake,
+  Rocket,
+  Settings2,
+  ShoppingBag,
+  Wrench,
+} from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -52,8 +60,6 @@ const categoryTagMap = {
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader currentPage="services" />
-
       <main>
         <section className="px-6 py-20 border-b border-outline-variant blueprint-grid-bg">
           <div className="max-w-7xl mx-auto w-full">
@@ -89,7 +95,7 @@ export default function ServicesPage() {
                           {tag}
                         </span>
                       </div>
-                      <h2 className="text-2xl md:text-3xl font-display mb-3">
+                      <h2 className="text-2xl md:text-3xl font-sans font-extrabold tracking-tight leading-tight mb-3">
                         {category.title}
                       </h2>
                       <p className="text-foreground/80 leading-relaxed">
@@ -140,7 +146,7 @@ export default function ServicesPage() {
             <div className="bg-surface border border-outline-variant p-8 md:p-10">
               <div className="flex items-center gap-3 mb-4">
                 <BadgePoundSterling className="w-8 h-8 text-primary" />
-                <h2 className="text-2xl md:text-4xl font-display">
+                <h2 className="text-2xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight">
                   Pricing and transparency
                 </h2>
               </div>
@@ -154,7 +160,7 @@ export default function ServicesPage() {
                 genuinely help your business. Clear reasoning and honest scope
                 come first.
               </p>
-              <ul className="space-y-2 text-sm text-foreground/80">
+              <ul className="space-y-2 text-sm list-disc pl-4 text-foreground/80">
                 <li>{partnershipBoundaries.model}</li>
                 <li>{partnershipBoundaries.transparency}</li>
                 <li>{partnershipBoundaries.scope}</li>
@@ -165,7 +171,7 @@ export default function ServicesPage() {
 
         <section className="px-6 py-20 bg-surface">
           <div className="max-w-7xl mx-auto w-full bg-background border border-outline-variant p-8 md:p-10">
-            <h2 className="text-2xl md:text-4xl font-display mb-4">
+            <h2 className="text-2xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight mb-4">
               Ready to talk through your priorities?
             </h2>
             <p className="text-foreground/80 leading-relaxed mb-6 max-w-4xl">
