@@ -18,7 +18,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Detailed service offerings for Gloucester small businesses: websites, visibility, Shopify, bespoke tools, and ongoing care.",
+    "Detailed service offerings for Gloucester small businesses: websites, visibility, Shopify, bespoke tools, and support for one-off projects or ongoing care.",
   keywords: [
     "gloucester web services",
     "shopify developer gloucester",
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     url: "/services",
     title: "Services for Gloucester Small Businesses",
     description:
-      "Websites, visibility, Shopify, bespoke tools, and ongoing care for local Gloucester businesses.",
+      "Websites, visibility, Shopify, bespoke tools, and support for one-off projects or ongoing care for local Gloucester businesses.",
   },
   twitter: {
     title: "Services for Gloucester Small Businesses",
     description:
-      "Websites, visibility, Shopify, bespoke tools, and ongoing care for local Gloucester businesses.",
+      "Websites, visibility, Shopify, bespoke tools, and support for one-off projects or ongoing care for local Gloucester businesses.",
   },
 };
 
@@ -54,7 +54,7 @@ const categoryTagMap = {
   growth: "Growth",
   ecommerce: "Ecommerce",
   bespoke: "Bespoke",
-  care: "Ongoing",
+  care: "Support",
 } as const;
 
 export default function ServicesPage() {
@@ -71,8 +71,9 @@ export default function ServicesPage() {
             </h1>
             <p className="text-lg text-foreground/80 max-w-4xl leading-relaxed">
               These are the core ways I help local businesses. If you need
-              something else digital, ask. If it is a good fit, we can scope it.
-              If not, I will help you find someone better suited.
+              something else digital, ask. Whether you want a focused one-off
+              project or longer-term support, we can scope what fits. If not, I
+              will help you find someone better suited.
             </p>
           </div>
         </section>

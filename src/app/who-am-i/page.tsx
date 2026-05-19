@@ -7,7 +7,7 @@ import profileImage from "../../../public/profile-image.png";
 export const metadata: Metadata = {
   title: "Who Am I?",
   description:
-    "A personal introduction to the local digital partner behind Glevum Digital, with values, approach, and working style.",
+    "A personal introduction to the local digital partner behind Glevum Digital, with values, approach, and support for one-off projects or ongoing work.",
   keywords: [
     "about glevum digital",
     "gloucester digital consultant",
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     url: "/who-am-i",
     title: "Meet the Person Behind Glevum Digital",
     description:
-      "A personal introduction to your local Gloucester digital partner, approach, and working style.",
+      "A personal introduction to your local Gloucester digital partner, approach, and support for one-off projects or ongoing work.",
   },
   twitter: {
     title: "Meet the Person Behind Glevum Digital",
     description:
-      "A personal introduction to your local Gloucester digital partner, approach, and working style.",
+      "A personal introduction to your local Gloucester digital partner, approach, and support for one-off projects or ongoing work.",
   },
 };
 
@@ -80,7 +80,7 @@ export default function WhoAmIPage() {
             <div className="lg:col-span-7">
               <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">Personal introduction</p>
               <h1 className="text-4xl md:text-6xl font-sans font-extrabold leading-tight text-primary-fixed mb-5">
-                The person behind your digital partnership.
+                The person behind your digital projects and partnerships.
               </h1>
               <p className="text-lg text-foreground/80 leading-relaxed mb-4">
                 I&apos;m a Gloucester-based developer with around 10 years in the digital industry, and I built Glevum Digital to help local small businesses get practical, honest support with their websites and systems. My focus is simple: remove digital stress, cut unnecessary busy work, and give business owners more time to focus on what they do best.
@@ -158,7 +158,7 @@ export default function WhoAmIPage() {
               <h2 className="text-2xl md:text-3xl font-sans font-extrabold tracking-tight leading-tight">Ready to chat?</h2>
             </div>
             <p className="text-foreground/80 mb-6">
-              If you&apos;d like honest advice, practical support, or a reliable long-term digital partner for your Gloucester business, let&apos;s have a chat and see what would help most.
+              If you&apos;d like honest advice and practical support for a one-off project or longer-term partnership, let&apos;s have a chat and see what would help most.
             </p>
             <Link
               href="/#contact"

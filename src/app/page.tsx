@@ -21,7 +21,7 @@ import profileImage from "../../public/profile-image.png";
 export const metadata: Metadata = {
   title: "Get Seen in Gloucester",
   description:
-    "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical ongoing help.",
+    "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical help for one-off projects or ongoing support.",
   keywords: [
     "gloucester web design",
     "gloucester digital support",
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
     url: "/",
     title: "Glevum Digital | Get Seen in Gloucester",
     description:
-      "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical ongoing help.",
+      "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical help for one-off projects or ongoing support.",
   },
   twitter: {
     title: "Glevum Digital | Get Seen in Gloucester",
     description:
-      "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical ongoing help.",
+      "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical help for one-off projects or ongoing support.",
   },
 };
 
@@ -88,8 +88,8 @@ const process = [
     text: "I implement the agreed improvements and keep you updated so there are no surprises.",
   },
   {
-    title: "Ongoing partnership",
-    text: "After launch, I continue with support and practical improvements as your business evolves.",
+    title: "Support when you need it",
+    text: "After launch, you can choose a clean handover or ongoing support and practical improvements as your business evolves.",
   },
 ];
 
@@ -100,7 +100,7 @@ const proofCards = [
   },
   {
     title: "Monthly care plans",
-    text: "Long-term support, updates, monitoring, and improvements after launch.",
+    text: "Optional support, updates, monitoring, and improvements after launch.",
   },
   {
     title: "Training and handover",
@@ -126,7 +126,7 @@ const faqs = [
   {
     question: "Will I still get support after launch?",
     answer:
-      "Yes. Ongoing support is a core part of how I work, so you are never left to figure things out alone.",
+      "Yes. You can choose ongoing support after launch, or keep things as a one-off project with a clear handover.",
   },
 ];
 
@@ -141,7 +141,7 @@ const localBusinessSchema = {
     name: "Gloucester",
   },
   description:
-    "Local digital support for Gloucester small businesses, including websites, visibility, and practical ongoing help.",
+    "Local digital support for Gloucester small businesses, including websites, visibility, and practical help for one-off projects or ongoing support.",
 };
 
 export default function Home() {
@@ -173,7 +173,8 @@ export default function Home() {
               <p className="mt-6 max-w-2xl text-lg md:text-xl text-foreground/85 leading-relaxed">
                 I help Gloucester small businesses improve websites, increase
                 online visibility, and simplify digital tasks. No jargon. No
-                outsourcing. One local partner you can rely on.
+                outsourcing. One local partner you can rely on for one-off
+                projects or ongoing support.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
@@ -248,8 +249,9 @@ export default function Home() {
             Practical support built around business outcomes.
           </h2>
           <p className="text-lg text-foreground/80 max-w-3xl mb-10">
-            Website, visibility, ecommerce, bespoke tools, and ongoing support
-            under one local partnership model.
+            Website, visibility, ecommerce, bespoke tools, and flexible support
+            from one local partner, whether you need a focused project or
+            ongoing help.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant border border-outline-variant shadow-sm">
@@ -391,7 +393,8 @@ export default function Home() {
                 </h2>
                 <p className="text-foreground/80 leading-relaxed max-w-3xl">
                   Learn more about my background, how I work with local
-                  businesses, and what you can expect when we partner together.
+                  businesses, and what you can expect whether you need a
+                  one-off project or ongoing support.
                 </p>
                 <Link
                   href="/who-am-i"

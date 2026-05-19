@@ -16,7 +16,7 @@ export type ServiceCategory = {
 export const serviceCategories: ServiceCategory[] = [
   {
     id: "essential",
-    title: "Essential web partnership",
+    title: "Essential website delivery",
     summary:
       "Fix and improve your website so it is clear, modern, easy to update, and easier for customers to trust.",
     whoFor:
@@ -90,9 +90,9 @@ export const serviceCategories: ServiceCategory[] = [
     id: "care",
     title: "Ongoing care, support, and training",
     summary:
-      "Monthly care plans plus handover/training so your team can confidently run day-to-day updates.",
+      "Flexible care support plus handover/training so your team can confidently run day-to-day updates.",
     whoFor:
-      "Businesses that want long-term support instead of one-off delivery.",
+      "Businesses that want optional ongoing support after a one-off project or alongside existing digital systems.",
     outcomes:
       "Consistent progress, better stability, and less stress around website and digital upkeep.",
     includes: [
@@ -108,7 +108,7 @@ export const serviceCategories: ServiceCategory[] = [
 
 export const partnershipBoundaries = {
   model:
-    "Lean, local, and direct. Without agency overhead, quotes are usually very competitive.",
+    "Lean, local, and direct. Whether you need a one-off project or ongoing support, quotes are usually very competitive without agency overhead.",
   transparency:
     "You only pay for work that genuinely helps your business. No upsell for unnecessary extras.",
   scope:
