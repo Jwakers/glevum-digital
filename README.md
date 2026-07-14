@@ -1,7 +1,7 @@
 ## Site TODO:
 
-- [ ] Complete who am I page content
-- [ ] Who am I page image (add the same image to the home page section)
+- [x] Complete who am I page content
+- [x] Who am I page image (add the same image to the home page section)
 - [ ] Make contact form functional
 - [ ] Purchase domain
 - [ ] Purchase business email domain through gmail

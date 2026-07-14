@@ -258,10 +258,7 @@ export default function Home() {
             {serviceCategories.map((service) => {
               const Icon = serviceIconMap[service.id];
               return (
-                <article
-                  key={service.title}
-                  className="bg-surface p-8"
-                >
+                <article key={service.title} className="bg-surface p-8">
                   <Icon className="w-8 h-8 text-primary mb-5" />
                   <h3 className="text-xl font-semibold mb-3">
                     {service.title}
@@ -313,17 +310,13 @@ export default function Home() {
             <div className="flex items-center gap-3 mb-4">
               <BadgePoundSterling className="w-8 h-8 text-primary" />
               <h2 className="text-2xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight">
-                Competitive pricing. Complete transparency.
+                Senior digital expertise without the agency layers.
               </h2>
             </div>
             <p className="text-foreground/80 leading-relaxed mb-4 max-w-4xl">
-              Because I work lean and directly with local clients, I can often
-              beat agency quotes without cutting corners. You only pay for work
-              that genuinely helps your business.
-            </p>
-            <p className="text-foreground/80 leading-relaxed max-w-4xl">
-              No unnecessary extras. No inflated scope. Clear recommendations,
-              honest pricing, and practical decisions from start to finish.
+              Work directly with the person advising, designing and building
+              your solution. Clear scope, transparent pricing and no unnecessary
+              extras.
             </p>
           </div>
         </div>
@@ -366,10 +359,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant border border-outline-variant">
             {proofCards.map((item) => (
-              <div
-                key={item.title}
-                className="bg-surface p-7"
-              >
+              <div key={item.title} className="bg-surface p-7">
                 <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
                 <p className="text-sm text-foreground/80 leading-relaxed">
                   {item.text}
@@ -393,8 +383,8 @@ export default function Home() {
                 </h2>
                 <p className="text-foreground/80 leading-relaxed max-w-3xl">
                   Learn more about my background, how I work with local
-                  businesses, and what you can expect whether you need a
-                  one-off project or ongoing support.
+                  businesses, and what you can expect whether you need a one-off
+                  project or ongoing support.
                 </p>
                 <Link
                   href="/who-am-i"
@@ -427,10 +417,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 gap-px bg-outline-variant border border-outline-variant">
             {faqs.map((item) => (
-              <div
-                key={item.question}
-                className="bg-background p-7"
-              >
+              <div key={item.question} className="bg-background p-7">
                 <div className="flex items-start gap-3 mb-2">
                   <CircleHelp className="w-5 h-5 text-primary mt-0.5" />
                   <h3 className="font-semibold">{item.question}</h3>
@@ -472,7 +459,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
