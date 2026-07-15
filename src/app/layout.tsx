@@ -1,6 +1,6 @@
+import { SiteHeader } from "@/components/site-header";
 import type { Metadata } from "next";
 import { Geist_Mono, Manrope } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const bodyFont = Manrope({
@@ -16,21 +16,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://glevum.digital"),
   title: {
-    default: "Glevum Digital | Get Seen in Gloucester",
-    template: "%s | Glevum Digital",
+    default: "Penumbra Digital | Get Seen in Gloucester",
+    template: "%s | Penumbra Digital",
   },
   description:
     "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
   alternates: {
     canonical: "/",
   },
-  applicationName: "Glevum Digital",
+  applicationName: "Penumbra Digital",
   category: "business",
   openGraph: {
     type: "website",
     url: "https://glevum.digital",
-    siteName: "Glevum Digital",
-    title: "Glevum Digital | Get Seen in Gloucester",
+    siteName: "Penumbra Digital",
+    title: "Penumbra Digital | Get Seen in Gloucester",
     description:
       "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
     locale: "en_GB",
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     //     url: "/og-image.svg",
     //     width: 1200,
     //     height: 630,
-    //     alt: "Glevum Digital - local digital support for Gloucester small businesses",
+    //     alt: "Penumbra Digital - local digital support for Gloucester small businesses",
     //   },
     // ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Glevum Digital | Get Seen in Gloucester",
+    title: "Penumbra Digital | Get Seen in Gloucester",
     description:
       "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
     // images: ["/og-image.svg"],
@@ -77,7 +77,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <footer className="border-t border-outline-variant py-8 text-center text-xs font-mono text-outline uppercase tracking-widest bg-background">
-          &copy; {new Date().getFullYear()} Glevum Digital · Bold digital
+          &copy; {new Date().getFullYear()} Penumbra Digital · Bold digital
           support for Gloucester small businesses.
         </footer>
       </body>

@@ -2,9 +2,9 @@
 
 - [x] Complete who am I page content
 - [x] Who am I page image (add the same image to the home page section)
+- [ ] Set up a proper business email and update the site with it.
 - [ ] Make contact form functional
 - [ ] Purchase domain
-- [ ] Purchase business email domain through gmail
 - [ ] Launch website
 - [ ] Set up search console
 

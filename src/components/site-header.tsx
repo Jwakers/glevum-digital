@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { ArrowRight, Code2 } from "lucide-react";
 import Link from "next/link";
@@ -30,7 +30,9 @@ export function SiteHeader({ currentPage = "home" }: SiteHeaderProps) {
     <nav className="flex items-center justify-between px-6 py-4 border-b border-outline-variant bg-background/90 backdrop-blur sticky top-0 z-50">
       <Link href="/" className="flex items-center gap-2">
         <Code2 className="w-5 h-5 text-primary" />
-        <span className="font-semibold tracking-tight text-lg">Glevum Digital</span>
+        <span className="font-semibold tracking-tight text-lg">
+          Penumbra Digital
+        </span>
       </Link>
       <div className="flex gap-7">
         <Link href="/who-am-i" className={whoClass}>

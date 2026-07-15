@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "/",
-    title: "Glevum Digital | Get Seen in Gloucester",
+    title: "Penumbra Digital | Get Seen in Gloucester",
     description:
       "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical help for one-off projects or ongoing support.",
   },
   twitter: {
-    title: "Glevum Digital | Get Seen in Gloucester",
+    title: "Penumbra Digital | Get Seen in Gloucester",
     description:
       "Local digital support for Gloucester small businesses: websites, visibility improvements, and practical help for one-off projects or ongoing support.",
   },
@@ -133,7 +133,7 @@ const faqs = [
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Glevum Digital",
+  name: "Penumbra Digital",
   url: "https://glevum.digital",
   email: "hello@glevum.digital",
   areaServed: {
@@ -379,7 +379,7 @@ export default function Home() {
                   Who am I?
                 </p>
                 <h2 className="text-3xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight mb-4">
-                  Meet the person behind Glevum Digital.
+                  Meet the person behind Penumbra Digital.
                 </h2>
                 <p className="text-foreground/80 leading-relaxed max-w-3xl">
                   Learn more about my background, how I work with local
@@ -397,7 +397,7 @@ export default function Home() {
                 <div className="aspect-square border border-outline-variant bg-surface overflow-hidden">
                   <Image
                     src={profileImage}
-                    alt="Jack Wakeham, founder of Glevum Digital"
+                    alt="Jack Wakeham, founder of Penumbra Digital"
                     className="h-full w-full object-cover"
                   />
                 </div>
