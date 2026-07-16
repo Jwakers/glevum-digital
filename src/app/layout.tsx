@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://glevum.digital"),
+  metadataBase: new URL("https://penumbradigital"),
   title: {
     default: "Penumbra Digital | Get Seen in Gloucester",
     template: "%s | Penumbra Digital",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   category: "business",
   openGraph: {
     type: "website",
-    url: "https://glevum.digital",
+    url: "https://penumbradigital",
     siteName: "Penumbra Digital",
     title: "Penumbra Digital | Get Seen in Gloucester",
     description:

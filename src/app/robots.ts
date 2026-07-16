@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://glevum.digital/sitemap.xml",
-    host: "https://glevum.digital",
+    sitemap: "https://penumbradigital/sitemap.xml",
+    host: "https://penumbradigital",
   };
 }

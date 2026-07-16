@@ -134,8 +134,8 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Penumbra Digital",
-  url: "https://glevum.digital",
-  email: "hello@glevum.digital",
+  url: "https://penumbradigital",
+  email: "jackwakeham82@gmail.com",
   areaServed: {
     "@type": "City",
     name: "Gloucester",
@@ -445,10 +445,10 @@ export default function Home() {
               You can also email directly if you prefer.
             </p>
             <a
-              href="mailto:hello@glevum.digital"
+              href="mailto:jackwakeham82@gmail.com"
               className="inline-flex items-center text-primary font-semibold hover:underline"
             >
-              hello@glevum.digital <ArrowRight className="w-4 h-4 ml-2" />
+              jackwakeham82@gmail.com <ArrowRight className="w-4 h-4 ml-2" />
             </a>
             <p className="text-xs text-foreground/65 mt-4">
               Typical response time: within one working day.

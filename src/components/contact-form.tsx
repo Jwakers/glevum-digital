@@ -42,7 +42,7 @@ export function ContactForm() {
       setMessage(
         error instanceof Error
           ? error.message
-          : "I could not send your message right now. Please email hello@glevum.digital.",
+          : "I could not send your message right now. Please email jackwakeham82@gmail.com.",
       );
     }
   }

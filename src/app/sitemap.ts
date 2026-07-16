@@ -5,19 +5,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://glevum.digital",
+      url: "https://penumbradigital",
       lastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://glevum.digital/services",
+      url: "https://penumbradigital/services",
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: "https://glevum.digital/who-am-i",
+      url: "https://penumbradigital/who-am-i",
       lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
