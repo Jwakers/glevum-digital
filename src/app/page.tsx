@@ -1,17 +1,6 @@
+import { ContactForm } from "@/components/contact-form";
 import { serviceCategories } from "@/content/service-framework";
-import {
-  ArrowRight,
-  BadgePoundSterling,
-  CircleHelp,
-  ClipboardCheck,
-  Handshake,
-  MapPin,
-  Rocket,
-  Smartphone,
-  Sparkles,
-  UserCheck2,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,35 +32,12 @@ export const metadata: Metadata = {
   },
 };
 
-const audience = [
-  "Cafes and restaurants",
-  "Salons and barbers",
-  "Trades and local services",
-  "Gyms and wellness businesses",
-  "Local shops",
-  "Therapists and consultants",
-  "Wedding businesses",
-  "Independent hospitality brands",
-];
-
 const valueStrip = [
-  { icon: Rocket, title: "Get seen", label: "Business visibility" },
-  {
-    icon: ClipboardCheck,
-    title: "Clear digital plan",
-    label: "Practical next steps",
-  },
-  { icon: UserCheck2, title: "Easy updates", label: "Stay in control" },
-  { icon: Handshake, title: "Direct support", label: "One local partner" },
+  { title: "Get seen", label: "Business visibility" },
+  { title: "Clear digital plan", label: "Practical next steps" },
+  { title: "Easy updates", label: "Stay in control" },
+  { title: "Direct support", label: "One local partner" },
 ];
-
-const serviceIconMap = {
-  essential: Sparkles,
-  growth: Rocket,
-  ecommerce: Smartphone,
-  bespoke: Wrench,
-  care: Handshake,
-} as const;
 
 const process = [
   {
@@ -88,11 +54,11 @@ const process = [
   },
   {
     title: "Support when you need it",
-    text: "After launch, you can choose a clean handover or ongoing support and practical improvements as your business evolves.",
+    text: "After launch, you can choose a clean handover or ongoing support as your business evolves.",
   },
 ];
 
-const proofCards = [
+const proofPoints = [
   {
     title: "Gloucester-only focus",
     text: "I work exclusively with local small businesses, so every project gets direct attention.",
@@ -129,6 +95,9 @@ const faqs = [
   },
 ];
 
+const audienceLine =
+  "Cafes and restaurants · Salons and barbers · Trades and local services · Gyms and wellness · Local shops · Therapists and consultants · Wedding businesses · Independent hospitality";
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -145,90 +114,68 @@ const localBusinessSchema = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 bg-surface font-sans text-foreground">
+    <div className="flex flex-1 flex-col bg-background font-sans text-foreground">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessSchema),
         }}
       />
-      <section className="relative px-6 py-20 md:py-28 border-b border-outline-variant bg-background blueprint-grid-bg overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center border border-primary text-primary px-3 py-1 text-xs font-semibold font-mono uppercase tracking-widest bg-surface w-fit mb-5">
-                <MapPin className="w-3 h-3 mr-2" />
-                Gloucester · Small business focus
-              </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-primary-fixed font-sans font-extrabold">
-                Your local digital partner.
-                <br />
-                <span className="text-foreground">
-                  For small businesses in Gloucester.
-                </span>
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-lg md:text-xl text-foreground/85 leading-relaxed">
-                I help Gloucester small businesses improve websites, increase
-                online visibility, and simplify digital tasks. No jargon. No
-                outsourcing. One local partner you can rely on for one-off
-                projects or ongoing support.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Link
-                  href="/contact"
-                  className="bg-primary text-surface px-8 py-4 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-primary-fixed w-fit border border-primary flex items-center justify-center"
-                >
-                  Get a free website review
-                </Link>
-                <Link
-                  href="/services"
-                  className="bg-surface text-primary px-8 py-4 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-outline-variant/20 w-fit border border-primary flex items-center justify-center"
-                >
-                  View services
-                </Link>
-              </div>
-            </div>
-
-            <aside className="lg:col-span-5">
-              <div className="bg-surface border border-outline-variant p-6 shadow-[0_14px_30px_rgba(11,78,219,0.12)]">
-                <p className="text-xs font-mono uppercase tracking-widest text-primary mb-4">
-                  Who I work with
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {audience.map((item) => (
-                    <div
-                      key={item}
-                      className="border border-outline-variant bg-background px-3 py-2 text-sm"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-foreground/75 mt-5">
-                  These are examples, not exclusions. If you are a small
-                  business in Gloucester, I am happy to work with you.
-                </p>
-              </div>
-            </aside>
+      <section className="relative overflow-hidden border-b border-outline-variant bg-background px-6 py-20 md:min-h-[720px] md:px-16 md:py-28">
+        <div
+          className="pointer-events-none absolute -right-20 top-10 size-[620px] rounded-full bg-[rgba(11,78,219,0.07)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute right-[180px] -bottom-[120px] size-[340px] rounded-full bg-[rgba(255,122,24,0.12)]"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-7">
+          <div className="h-1 w-12 shrink-0 bg-accent" aria-hidden="true" />
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+            Gloucester · Small business focus
+          </p>
+          <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-primary-fixed md:text-6xl lg:text-[72px] lg:leading-[78px] lg:tracking-[-0.04em]">
+            Penumbra Digital
+          </h1>
+          <p className="max-w-2xl text-xl font-medium tracking-tight text-foreground md:text-2xl md:leading-[34px]">
+            Your local digital partner for small businesses in Gloucester.
+          </p>
+          <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center">
+            <Link
+              href="#contact"
+              className="inline-flex w-fit items-center justify-center border border-primary bg-primary px-7 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-surface transition-colors hover:bg-primary-fixed"
+            >
+              Get a free website review
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex w-fit items-center justify-center border border-primary bg-transparent px-7 py-4 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-primary transition-colors hover:bg-outline-variant/20"
+            >
+              View services
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-surface border-b border-outline-variant overflow-hidden">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant border-x border-outline-variant max-w-7xl mx-auto w-full">
-          {valueStrip.map((item) => (
+      <section className="border-b border-outline-variant bg-surface">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-2 lg:grid-cols-4">
+          {valueStrip.map((item, index) => (
             <div
               key={item.title}
-              className="bg-surface p-8 flex flex-col items-center text-center justify-center min-h-[160px]"
+              className={`flex flex-col gap-2 px-6 py-10 md:px-12 ${
+                index < valueStrip.length - 1
+                  ? "border-outline-variant lg:border-r"
+                  : ""
+              } ${index % 2 === 0 ? "border-outline-variant max-lg:border-r" : ""} ${
+                index < 2 ? "max-lg:border-b" : ""
+              }`}
             >
-              <item.icon className="w-6 h-6 text-primary mb-3" />
-              <h4 className="text-lg md:text-xl font-bold tracking-tight">
+              <h2 className="text-lg font-bold tracking-tight text-foreground md:text-xl">
                 {item.title}
-              </h4>
-              <span className="text-xs font-bold font-mono uppercase tracking-widest text-outline mt-1">
+              </h2>
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-outline">
                 {item.label}
               </span>
             </div>
@@ -237,191 +184,199 @@ export default function Home() {
       </section>
 
       <section
-        className="px-6 py-24 bg-background border-b border-outline-variant"
+        className="border-b border-outline-variant bg-background px-6 py-20 md:px-16 md:py-24"
         id="services"
       >
-        <div className="max-w-7xl mx-auto w-full">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
-            Services
-          </p>
-          <h2 className="text-3xl md:text-5xl font-sans font-extrabold tracking-tight leading-tight mb-4">
-            Practical support built around business outcomes.
-          </h2>
-          <p className="text-lg text-foreground/80 max-w-3xl mb-10">
-            Website, visibility, ecommerce, bespoke tools, and flexible support
-            from one local partner, whether you need a focused project or
-            ongoing help.
-          </p>
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-12">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              Services
+            </p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl md:leading-[54px] md:tracking-[-0.03em]">
+              Practical support built around business outcomes.
+            </h2>
+            <p className="max-w-2xl text-lg leading-relaxed text-outline">
+              Website, visibility, ecommerce, bespoke tools, and flexible
+              support — whether you need a focused project or ongoing help.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant border border-outline-variant shadow-sm">
-            {serviceCategories.map((service) => {
-              const Icon = serviceIconMap[service.id];
-              return (
-                <article key={service.title} className="bg-surface p-8">
-                  <Icon className="w-8 h-8 text-primary mb-5" />
-                  <h3 className="text-xl font-semibold mb-3">
+          <div className="flex w-full flex-col border-t border-outline-variant">
+            {serviceCategories.map((service, index) => (
+              <article
+                key={service.id}
+                className="flex items-start gap-8 border-b border-outline-variant py-8 md:gap-12"
+              >
+                <span className="w-12 shrink-0 font-mono text-[13px] font-semibold tracking-[0.08em] text-primary">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="flex flex-1 flex-col gap-2">
+                  <h3 className="text-xl font-bold tracking-tight text-foreground md:text-[22px]">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-foreground/80 leading-relaxed">
+                  <p className="max-w-3xl text-base leading-relaxed text-outline">
                     {service.summary}
                   </p>
-                </article>
-              );
-            })}
-            <Link
-              href="/services"
-              className="bg-primary text-surface p-8 flex flex-col justify-between"
-            >
-              <div>
-                <h3 className="text-xl font-semibold mb-3 text-surface">
-                  See all services in detail
-                </h3>
-                <p className="text-sm text-surface/85 leading-relaxed">
-                  Explore full breakdowns, who each service is for, and how we
-                  scope custom plans.
-                </p>
-              </div>
-              <span className="mt-6 inline-flex items-center text-sm font-semibold text-surface/95">
-                Visit Services page <ArrowRight className="w-4 h-4 ml-2" />
-              </span>
-            </Link>
+                </div>
+              </article>
+            ))}
           </div>
 
-          <div className="mt-8 border border-outline-variant bg-surface p-6">
-            <p className="text-sm text-foreground/80 leading-relaxed">
-              Need help with something else digital? Ask. If it is a good fit,
-              we can scope a custom plan. If not, I will point you to the right
-              specialist.
-            </p>
-            <Link
-              href="/services"
-              className="mt-4 inline-flex items-center text-sm font-semibold text-primary hover:underline"
-            >
-              View full service details <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
-          </div>
+          <Link
+            href="/services"
+            className="inline-flex w-fit items-center gap-2 text-[15px] font-semibold text-primary hover:underline"
+          >
+            See all services in detail <ArrowRight className="size-4" />
+          </Link>
         </div>
       </section>
 
-      <section className="px-6 py-20 bg-surface border-b border-outline-variant">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="bg-background border border-outline-variant p-8 md:p-10">
-            <div className="flex items-center gap-3 mb-4">
-              <BadgePoundSterling className="w-8 h-8 text-primary" />
-              <h2 className="text-2xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight">
-                Senior digital expertise without the agency layers.
-              </h2>
-            </div>
-            <p className="text-foreground/80 leading-relaxed mb-4 max-w-4xl">
-              Work directly with the person advising, designing and building
-              your solution. Clear scope, transparent pricing and no unnecessary
-              extras.
+      <section className="border-b border-outline-variant bg-surface px-6 py-20 md:px-16 md:py-24">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-12 md:gap-14">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              How we work together
             </p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl md:leading-[54px] md:tracking-[-0.03em]">
+              Clear process. Low pressure. Fast momentum.
+            </h2>
           </div>
-        </div>
-      </section>
 
-      <section className="px-6 py-24 bg-surface border-b border-outline-variant">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
-            How we work together
-          </p>
-          <h2 className="text-3xl md:text-5xl font-sans font-extrabold tracking-tight leading-tight mb-10">
-            Clear process. Low pressure. Fast momentum.
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant border border-outline-variant shadow-sm">
-            {process.map((step, i) => (
+          <div className="flex w-full flex-col">
+            {process.map((step, index) => (
               <div
                 key={step.title}
-                className="bg-background p-6 flex flex-col min-h-[230px]"
+                className="flex items-start gap-8 border-b border-outline-variant py-7 md:gap-10"
               >
-                <div className="text-3xl font-semibold text-outline font-mono mb-5">
-                  0{i + 1}
-                </div>
-                <h3 className="font-semibold text-base mb-3">{step.title}</h3>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  {step.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-24 bg-background border-b border-outline-variant">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
-            Why local businesses choose me
-          </p>
-          <h2 className="text-3xl md:text-5xl font-sans font-extrabold tracking-tight leading-tight mb-10">
-            Trusted support from one accountable local partner.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant border border-outline-variant">
-            {proofCards.map((item) => (
-              <div key={item.title} className="bg-surface p-7">
-                <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-20 bg-surface border-b border-outline-variant">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="bg-background border border-outline-variant p-8 md:p-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-              <div className="md:col-span-2">
-                <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
-                  Who am I?
-                </p>
-                <h2 className="text-3xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight mb-4">
-                  Meet the person behind Penumbra Digital.
-                </h2>
-                <p className="text-foreground/80 leading-relaxed max-w-3xl">
-                  Learn more about my background, how I work with local
-                  businesses, and what you can expect whether you need a one-off
-                  project or ongoing support.
-                </p>
-                <Link
-                  href="/who-am-i"
-                  className="mt-6 inline-flex items-center bg-primary text-surface px-6 py-3 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-primary-fixed"
+                <span
+                  className={`w-16 shrink-0 font-mono text-3xl font-semibold tracking-tight leading-9 ${
+                    index === 0 ? "text-accent" : "text-outline-variant"
+                  }`}
                 >
-                  Find out more
-                </Link>
-              </div>
-              <div className="md:col-span-1">
-                <div className="aspect-square border border-outline-variant bg-surface overflow-hidden">
-                  <Image
-                    src={profileImage}
-                    alt="Jack Wakeham, founder of Penumbra Digital"
-                    className="h-full w-full object-cover"
-                  />
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="flex max-w-3xl flex-1 flex-col gap-2.5">
+                  <h3 className="text-xl font-bold tracking-tight text-foreground md:text-[22px]">
+                    {step.title}
+                  </h3>
+                  <p className="text-base leading-relaxed text-outline">
+                    {step.text}
+                  </p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-24 bg-surface border-b border-outline-variant">
-        <div className="max-w-4xl mx-auto w-full">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
-            FAQ
+      <section className="border-b border-outline-variant bg-background px-6 py-20 md:px-16 md:py-24">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-10">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              Who I work with
+            </p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl md:leading-[48px] md:tracking-[-0.03em]">
+              Gloucester small businesses, across the board.
+            </h2>
+          </div>
+          <p className="max-w-5xl text-xl font-medium leading-9 tracking-tight text-foreground md:text-[22px]">
+            {audienceLine}
           </p>
-          <h2 className="text-3xl md:text-5xl font-sans font-extrabold tracking-tight leading-tight mb-10">
-            Quick answers before we talk.
+          <p className="max-w-2xl text-base leading-relaxed text-outline">
+            Examples, not exclusions. If you are a small business in Gloucester,
+            I am happy to work with you.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-outline-variant bg-surface px-6 py-20 md:px-16 md:py-24">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-12">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              Why local businesses choose me
+            </p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl md:leading-[54px] md:tracking-[-0.03em]">
+              Trusted support from one accountable local partner.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+            {proofPoints.map((item) => (
+              <div key={item.title} className="flex flex-col gap-3">
+                <h3 className="text-lg font-bold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-[15px] leading-6 text-outline">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary-fixed px-6 py-16 md:px-16 md:py-[72px]">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-5">
+          <div className="h-1 w-12 shrink-0 bg-accent" aria-hidden="true" />
+          <h2 className="max-w-4xl text-3xl font-extrabold tracking-tight text-surface md:text-4xl md:leading-[44px] md:tracking-[-0.03em]">
+            Senior digital expertise without the agency layers.
           </h2>
-          <div className="grid grid-cols-1 gap-px bg-outline-variant border border-outline-variant">
+          <p className="max-w-3xl text-lg leading-relaxed text-surface/85">
+            Work directly with the person advising, designing and building your
+            solution. Clear scope, transparent pricing, and no unnecessary
+            extras.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-outline-variant bg-background px-6 py-20 md:px-16 md:py-24">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-12 md:flex-row md:items-center md:gap-16">
+          <div className="flex flex-1 flex-col gap-5">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              Who am I?
+            </p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl md:leading-[48px] md:tracking-[-0.03em]">
+              Meet the person behind Penumbra Digital.
+            </h2>
+            <p className="max-w-xl text-[17px] leading-7 text-outline">
+              Learn more about my background, how I work with local businesses,
+              and what you can expect whether you need a one-off project or
+              ongoing support.
+            </p>
+            <Link
+              href="/who-am-i"
+              className="inline-flex w-fit items-center justify-center bg-primary px-6 py-3.5 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-surface transition-colors hover:bg-primary-fixed"
+            >
+              Find out more
+            </Link>
+          </div>
+          <div className="aspect-square w-full max-w-[360px] shrink-0 overflow-hidden border border-outline-variant bg-surface">
+            <Image
+              src={profileImage}
+              alt="Jack Wakeham, founder of Penumbra Digital"
+              className="size-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-outline-variant bg-surface px-6 py-20 md:px-16 md:py-24">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-12">
+          <div className="flex max-w-3xl flex-col gap-4">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              FAQ
+            </p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl md:leading-[54px] md:tracking-[-0.03em]">
+              Quick answers before we talk.
+            </h2>
+          </div>
+          <div className="flex w-full max-w-3xl flex-col">
             {faqs.map((item) => (
-              <div key={item.question} className="bg-background p-7">
-                <div className="flex items-start gap-3 mb-2">
-                  <CircleHelp className="w-5 h-5 text-primary mt-0.5" />
-                  <h3 className="font-semibold">{item.question}</h3>
-                </div>
-                <p className="text-foreground/80 text-sm leading-relaxed">
+              <div
+                key={item.question}
+                className="flex flex-col gap-2.5 border-b border-outline-variant py-7"
+              >
+                <h3 className="text-lg font-bold text-foreground">
+                  {item.question}
+                </h3>
+                <p className="text-base leading-relaxed text-outline">
                   {item.answer}
                 </p>
               </div>
@@ -430,24 +385,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-6 py-20 bg-surface">
-        <div className="max-w-5xl mx-auto w-full bg-background border border-outline-variant p-8 md:p-10">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
-            Ready to talk?
-          </p>
-          <h2 className="text-2xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight mb-4">
-            Book a chat and get clear next steps.
-          </h2>
-          <p className="text-foreground/80 leading-relaxed mb-6 max-w-3xl">
-            Share a little about your business and I will reply with practical
-            recommendations for your website, visibility, or ongoing support.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center bg-primary text-surface px-6 py-3 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-primary-fixed"
-          >
-            Book a chat <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
+      <section
+        id="contact"
+        className="border-t border-outline-variant bg-background px-6 py-20 md:px-16 md:py-24"
+      >
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-12 lg:flex-row lg:gap-16">
+          <div className="flex max-w-xl flex-1 flex-col gap-6 self-center">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              Ready to talk?
+            </p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl md:leading-[54px] md:tracking-[-0.03em]">
+              Book a chat and get clear next steps.
+            </h2>
+            <p className="text-lg leading-relaxed text-outline">
+              Send a quick message and I will reply with practical next steps.
+              You can also email directly if you prefer.
+            </p>
+            <a
+              href="mailto:jackwakeham82@gmail.com"
+              className="inline-flex w-fit items-center gap-2 text-[15px] font-semibold text-primary hover:underline"
+            >
+              jackwakeham82@gmail.com <ArrowRight className="size-4" />
+            </a>
+            <p className="text-[13px] leading-5 text-outline">
+              Typical response time: within one working day.
+            </p>
+          </div>
+          <div className="w-full max-w-[480px] shrink-0">
+            <ContactForm idPrefix="home-" />
+          </div>
         </div>
       </section>
     </div>

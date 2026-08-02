@@ -4,9 +4,16 @@ import { FormEvent, useState } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-export function ContactForm() {
+type ContactFormProps = {
+  idPrefix?: string;
+};
+
+export function ContactForm({ idPrefix = "" }: ContactFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
+  const nameId = `${idPrefix}name`;
+  const emailId = `${idPrefix}email`;
+  const messageId = `${idPrefix}message`;
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -49,72 +56,69 @@ export function ContactForm() {
 
   return (
     <form
-      className="space-y-5 bg-background border border-outline-variant p-8 shadow-[0_10px_24px_rgba(20,24,36,0.08)]"
+      className="flex w-full flex-col gap-5 border border-outline-variant bg-surface p-8 md:p-9"
       onSubmit={onSubmit}
     >
-      <div className="space-y-2">
-        <label
-          htmlFor="name"
-          className="text-sm font-medium text-foreground/80"
-        >
+      <div className="h-1 w-12 shrink-0 bg-accent" aria-hidden="true" />
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor={nameId} className="text-sm font-medium text-outline">
           Name
         </label>
         <input
-          id="name"
+          id={nameId}
           name="name"
           type="text"
           required
-          className="w-full bg-surface border border-outline-variant p-3 outline-none focus:border-primary transition-colors text-sm"
+          className="w-full border border-outline-variant bg-background p-3.5 text-sm outline-none transition-colors focus:border-primary"
           placeholder="Your name"
         />
       </div>
-      <div className="space-y-2">
-        <label
-          htmlFor="email"
-          className="text-sm font-medium text-foreground/80"
-        >
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor={emailId} className="text-sm font-medium text-outline">
           Email
         </label>
         <input
-          id="email"
+          id={emailId}
           name="email"
           type="email"
           required
-          className="w-full bg-surface border border-outline-variant p-3 outline-none focus:border-primary transition-colors text-sm"
+          className="w-full border border-outline-variant bg-background p-3.5 text-sm outline-none transition-colors focus:border-primary"
           placeholder="Your email address"
         />
       </div>
-      <div className="space-y-2">
-        <label
-          htmlFor="message"
-          className="text-sm font-medium text-foreground/80"
-        >
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor={messageId} className="text-sm font-medium text-outline">
           What do you need help with?
         </label>
         <textarea
-          id="message"
+          id={messageId}
           name="message"
           rows={4}
           required
-          className="w-full bg-surface border border-outline-variant p-3 outline-none focus:border-primary transition-colors text-sm resize-none"
+          className="min-h-[120px] w-full resize-none border border-outline-variant bg-background p-3.5 text-sm outline-none transition-colors focus:border-primary"
           placeholder="Tell me a little about your business and where you need support."
-        ></textarea>
+        />
       </div>
+
       <button
         type="submit"
         disabled={status === "sending"}
-        className="bg-primary text-surface w-full py-4 font-bold uppercase tracking-widest font-mono hover:bg-primary-fixed transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+        className="w-full bg-primary py-4 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-surface transition-colors hover:bg-primary-fixed disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "sending" ? "Sending..." : "Request your review"}
       </button>
+
       {message ? (
         <p
-          className={`text-sm ${status === "error" ? "text-red-600" : "text-foreground/75"}`}
+          className={`text-sm ${status === "error" ? "text-red-600" : "text-outline"}`}
         >
           {message}
         </p>
       ) : (
-        <p className="text-xs text-foreground/60">
+        <p className="text-xs leading-relaxed text-outline">
           No pressure. Just a clear first step.
         </p>
       )}
