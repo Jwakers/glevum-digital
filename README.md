@@ -2,6 +2,8 @@
 
 - [x] Complete who am I page content
 - [x] Who am I page image (add the same image to the home page section)
+- [x] The book a chat button only goes anchors so does not work on a second click. It should go directly to the contact page instead
+- [x] My profile image is showing up in open graph images. I think this is an automatic thing rather than something I have set. Set dedicated open graph images so that can be removed.
 - [ ] Set up a proper business email and update the site with it.
 - [ ] Make contact form functional
 - [ ] Purchase domain

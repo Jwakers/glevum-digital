@@ -181,7 +181,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center bg-primary text-surface px-6 py-3 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-primary-fixed"
               >
                 Book a chat <ArrowRight className="w-4 h-4 ml-2" />

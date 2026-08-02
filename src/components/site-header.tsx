@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type SiteHeaderProps = {
-  currentPage?: "home" | "who" | "services";
+  currentPage?: "home" | "who" | "services" | "contact";
 };
 
 export function SiteHeader({ currentPage = "home" }: SiteHeaderProps) {
@@ -15,7 +15,9 @@ export function SiteHeader({ currentPage = "home" }: SiteHeaderProps) {
       ? "services"
       : pathname === "/who-am-i"
         ? "who"
-        : currentPage;
+        : pathname === "/contact"
+          ? "contact"
+          : currentPage;
 
   const whoClass =
     resolvedCurrentPage === "who"
@@ -25,6 +27,10 @@ export function SiteHeader({ currentPage = "home" }: SiteHeaderProps) {
     resolvedCurrentPage === "services"
       ? "hidden sm:flex text-sm items-center font-semibold text-primary"
       : "hidden sm:flex text-sm items-center font-medium hover:text-primary transition-colors";
+  const contactClass =
+    resolvedCurrentPage === "contact"
+      ? "inline-flex text-sm items-center font-semibold text-surface bg-primary-fixed px-4 py-2 rounded-sm"
+      : "inline-flex text-sm items-center font-semibold text-surface bg-primary hover:bg-primary-fixed transition-colors px-4 py-2 rounded-sm";
 
   return (
     <nav className="flex items-center justify-between px-6 py-4 border-b border-outline-variant bg-background/90 backdrop-blur sticky top-0 z-50">
@@ -41,10 +47,7 @@ export function SiteHeader({ currentPage = "home" }: SiteHeaderProps) {
         <Link href="/services" className={servicesClass}>
           Services
         </Link>
-        <Link
-          href="/#contact"
-          className="inline-flex text-sm items-center font-semibold text-surface bg-primary hover:bg-primary-fixed transition-colors px-4 py-2 rounded-sm"
-        >
+        <Link href="/contact" className={contactClass}>
           Book a chat <ArrowRight className="w-4 h-4 ml-1" />
         </Link>
       </div>

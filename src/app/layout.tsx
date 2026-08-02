@@ -34,21 +34,12 @@ export const metadata: Metadata = {
     description:
       "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
     locale: "en_GB",
-    // images: [
-    //   {
-    //     url: "/og-image.svg",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Penumbra Digital - local digital support for Gloucester small businesses",
-    //   },
-    // ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Penumbra Digital | Get Seen in Gloucester",
     description:
       "Bold websites, local visibility, and practical digital support for Gloucester small businesses.",
-    // images: ["/og-image.svg"],
   },
   robots: {
     index: true,

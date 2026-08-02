@@ -187,10 +187,10 @@ export default function WhoAmIPage() {
               and see what would help most.
             </p>
             <Link
-              href="/#contact"
+              href="/contact"
               className="inline-flex items-center bg-primary text-surface px-6 py-3 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-primary-fixed"
             >
-              Go to contact section
+              Book a chat
             </Link>
           </div>
         </section>

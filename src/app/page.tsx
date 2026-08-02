@@ -1,4 +1,3 @@
-import { ContactForm } from "@/components/contact-form";
 import { serviceCategories } from "@/content/service-framework";
 import {
   ArrowRight,
@@ -178,12 +177,12 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="bg-primary text-surface px-8 py-4 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-primary-fixed w-fit border border-primary flex items-center justify-center"
                 >
                   Get a free website review
-                </a>
+                </Link>
                 <Link
                   href="/services"
                   className="bg-surface text-primary px-8 py-4 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-outline-variant/20 w-fit border border-primary flex items-center justify-center"
@@ -431,32 +430,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-6 py-24 bg-surface" id="contact">
-        <div className="max-w-5xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div>
-            <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
-              Contact
-            </p>
-            <h2 className="text-3xl md:text-5xl font-sans font-extrabold tracking-tight leading-tight mb-5">
-              Want more for your business in Gloucester?
-            </h2>
-            <p className="text-foreground/80 leading-relaxed mb-5">
-              Send a quick message and I will reply with practical next steps.
-              You can also email directly if you prefer.
-            </p>
-            <a
-              href="mailto:jackwakeham82@gmail.com"
-              className="inline-flex items-center text-primary font-semibold hover:underline"
-            >
-              jackwakeham82@gmail.com <ArrowRight className="w-4 h-4 ml-2" />
-            </a>
-            <p className="text-xs text-foreground/65 mt-4">
-              Typical response time: within one working day.
-            </p>
-          </div>
-          <div>
-            <ContactForm />
-          </div>
+      <section className="px-6 py-20 bg-surface">
+        <div className="max-w-5xl mx-auto w-full bg-background border border-outline-variant p-8 md:p-10">
+          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-3">
+            Ready to talk?
+          </p>
+          <h2 className="text-2xl md:text-4xl font-sans font-extrabold tracking-tight leading-tight mb-4">
+            Book a chat and get clear next steps.
+          </h2>
+          <p className="text-foreground/80 leading-relaxed mb-6 max-w-3xl">
+            Share a little about your business and I will reply with practical
+            recommendations for your website, visibility, or ongoing support.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center bg-primary text-surface px-6 py-3 text-sm font-bold uppercase tracking-widest font-mono transition-colors hover:bg-primary-fixed"
+          >
+            Book a chat <ArrowRight className="w-4 h-4 ml-2" />
+          </Link>
         </div>
       </section>
     </div>
