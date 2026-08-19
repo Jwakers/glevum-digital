@@ -30,19 +30,19 @@ export function ContactForm({ idPrefix = "" }: ContactFormProps) {
     setMessage("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/mdenprpy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      const data = (await res.json()) as { message?: string };
       if (!res.ok) {
-        throw new Error(data.message ?? "Something went wrong.");
+        const data = (await res.json()) as { error?: string };
+        throw new Error(data.error ?? "Something went wrong.");
       }
 
       setStatus("success");
-      setMessage(data.message ?? "Thanks. I will be in touch soon.");
+      setMessage("Thank you for your message. I will be in touch soon.");
       form.reset();
     } catch (error) {
       setStatus("error");
@@ -52,6 +52,31 @@ export function ContactForm({ idPrefix = "" }: ContactFormProps) {
           : "I could not send your message right now. Please email jackwakeham82@gmail.com.",
       );
     }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="flex w-full flex-col items-center gap-6 border border-outline-variant bg-surface p-8 text-center md:p-12">
+        <div className="h-1 w-12 shrink-0 bg-accent" aria-hidden="true" />
+        <h3 className="font-mono text-lg font-bold uppercase tracking-[0.08em] text-primary">
+          Message received
+        </h3>
+        <p className="max-w-md text-sm leading-relaxed text-outline">
+          Thanks for reaching out. I&apos;ll review your message and get back to
+          you shortly.
+        </p>
+        <button
+          type="button"
+          onClick={() => {
+            setStatus("idle");
+            setMessage("");
+          }}
+          className="font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-primary underline underline-offset-4 transition-colors hover:text-primary-fixed"
+        >
+          Send another message
+        </button>
+      </div>
+    );
   }
 
   return (
